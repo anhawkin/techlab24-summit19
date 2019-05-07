@@ -1,0 +1,226 @@
+
+    input[type=range] {
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 11px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000;
+  background: #74A9D8;
+  border-radius: 1px;
+  border: 0px solid #010101;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #000031;
+  border: 1px solid #00001E;
+  height: 26px;
+  width: 26px;
+  border-radius: 15px;
+  background: #FFFFFF;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -8px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #74A9D8;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 11px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000;
+  background: #74A9D8;
+  border-radius: 1px;
+  border: 0px solid #010101;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000031;
+  border: 1px solid #00001E;
+  height: 26px;
+  width: 26px;
+  border-radius: 15px;
+  background: #FFFFFF;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 11px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #74A9D8;
+  border: 0px solid #010101;
+  border-radius: 2px;
+  box-shadow: 1px 1px 1px #000000;
+}
+input[type=range]::-ms-fill-upper {
+  background: #74A9D8;
+  border: 0px solid #010101;
+  border-radius: 2px;
+  box-shadow: 1px 1px 1px #000000;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000031;
+  border: 1px solid #00001E;
+  height: 26px;
+  width: 26px;
+  border-radius: 15px;
+  background: #FFFFFF;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #74A9D8;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #74A9D8;
+}
+
+input[type="checkbox"] {
+    display:none;
+}
+input[type="checkbox"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 4px;
+    vertical-align:middle;
+    background:url(check_radio_sheet.png) left top no-repeat;
+    cursor:pointer;
+}
+input[type="checkbox"]:checked + label span {
+    background:url(check_radio_sheet.png) -19px top no-repeat;
+}
+
+        #login,
+        #loggedin {
+            display: none;
+        }
+        
+        .text-overflow {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 400px;
+            }
+        #custom-search-input{
+    padding: 3px;
+    border: solid 1px #E4E4E4;
+    border-radius: 6px;
+    background-color: #fff;
+    margin-top: 200px;
+}
+
+#custom-search-input input{
+    border: 0;
+    box-shadow: none;
+}
+
+#custom-search-input button{
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: #666666;
+    padding: 0 8px 0 10px;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input button:hover{
+    border: 0;
+    box-shadow: none;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input .glyphicon-search{
+    font-size: 23px;
+}
+.col-md-6 {
+    left: 25%;
+    margin-bottom: 20px;
+}
+.shot-author {
+    color: white;
+}
+.shot-author.playlist {
+    min-height: 115px;
+    text-align: center;
+    width: 75%;
+    padding: 15px 0 0 25px;
+}
+.shot-author.error {
+    text-align: center;
+    padding: 35px;
+}
+.shot-image {
+    height: 200px;
+} 
+.page-title.recommendations {
+    color: white;
+    text-align: center;
+    font-size: 9.25em;
+}
+.shot.playlist {
+    background: red;
+    border-radius: 20%;
+}
+.shot.height {
+    height: 260px;
+    min-width: 200px;
+}
+.container.top {
+    padding-top: 15px;
+}
+.media-body {
+    visibility: hidden;
+}
+#oauth {
+    visibility: hidden;
+}
+#obtain-new-token {
+    visibility: hidden;
+}
+.recommended iframe {
+    width: 100%;
+    height: 40%;
+}
+.getRecommendations, .sendTrack {
+    background: black;
+    width: 30%;
+}
+.previousPlaylist,.nextPlaylist {
+    width: 50%;
+    float: left;
+    margin-bottom: 10px;
+}
+.shot.height.container {
+    min-width: 420px;
+}
+.shot.settings {
+    text-align: center;
+    color: white;
+    min-width: 400px;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+.alt {
+  background-color: #cbd1d8;
+}
+.page-title p {
+    color: black;
+}

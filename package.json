@@ -1,0 +1,21 @@
+{
+  "name": "techlab",
+  "version": "1.0.0",
+  "description": "techlab for summit",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@adobe/target-node-client": "^0.15.0",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.16.4",
+    "file-system": "^2.2.2",
+    "nodemon": "^1.18.11",
+    "querystring": "^0.2.0",
+    "request": "^2.88.0"
+  }
+}
