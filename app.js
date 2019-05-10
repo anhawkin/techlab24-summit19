@@ -3,6 +3,7 @@ var request = require('request');
 var querystring = require('querystring');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
+
 const fs = require("fs");
 const TargetNodeClient = require("@adobe/target-node-client");
 const client = TargetNodeClient.create({
@@ -111,7 +112,8 @@ app.get('/', function(req, res) {
                 TEMPLATE = fs.readFileSync(__dirname + "/public/index.tpl").toString();
                 searchAlgo = "A";
             }
-            // grabbing the ID from the Target Visitor ID 
+            // grabbing the ID from the Target Visitor ID to use for Analytics in this example 
+            // sending a successful response message to the browser
             mboxId = response.targetCookie.value.split('PC#'), visitorID = mboxId[1].split('.'), sendSuccessResponse(res, response)
         })
         .catch(error => {
@@ -384,7 +386,7 @@ app.get('/search', function(req, res) {
                 'User-Agent': uA,
                 'Content-Type': 'text/xml'
             },
-            body: '<?xml version=1.0 encoding=UTF-8?><request><sc_xml_ver>1.0</sc_xml_ver><pageURL>' + referer + '</pageURL><pageName>Spotify</pageName><events>event11</events><prop11>' + searchQuery + '</prop11><visitorID>' + visitorID[0] + '</visitorID><reportSuiteID>ajhbc</reportSuiteID></request>'
+            body: '<?xml version=1.0 encoding=UTF-8?><request><sc_xml_ver>1.0</sc_xml_ver><pageURL>' + referer + '</pageURL><pageName>TechLab24</pageName><events>event11</events><prop11>' + searchQuery + '</prop11><visitorID>' + visitorID[0] + '</visitorID><reportSuiteID>ajhbc</reportSuiteID></request>'
 
         }
 
@@ -396,6 +398,9 @@ app.get('/search', function(req, res) {
                 console.log(error);
             }
         });
+
+
+        
     }
 
 });

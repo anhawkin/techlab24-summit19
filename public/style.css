@@ -575,3 +575,6 @@ input.button {
 @media (min-width: 1800px) {
   .shots {
     width: 112.5em; } }
+  .shots {
+    width: 100%;
+  }  
