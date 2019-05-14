@@ -196,60 +196,10 @@ app.get('/recommendations', function(req, res) {
 
 
     // the body of the main search query
-    var queryJSON = {
-        "sort": {
-            "_score": "asc"
-        },
-        "query": {
-            "function_score": {
-                "query": {
-                    "bool": {
-                        "must_not": {
-                            "match_phrase": {
-                                "name": queryData.name
-                            }
-                        },
-                        "must": [{
-                            "range": {
-                                "popularity": {
-                                    "gte": queryData.popularity - inputData.popularityValue,
-                                    "lte": queryData.popularity + inputData.popularityValue
-                                }
-                            }
-                        }, {
-                            "range": {
-                                "duration_ms": {
-                                    "gte": 30000
-                                }
-                            }
-                        }]
-                    }
-                },
-                "script_score": {
-                    "script": {
-                        "lang": "expression",
-                        "inline": "pow(acousticness - doc['acousticness'], 2) + pow(danceability - doc['danceability'], 2) + pow(energy - doc['energy'], 2) + pow(valence - doc['valence'], 2) + pow(instrumentalness - doc['instrumentalness'], 2) + pow(liveness - doc['liveness'], 2)",
-                        "params": {
-                            "acousticness": queryData.acousticness,
-                            "danceability": queryData.danceability,
-                            "energy": queryData.energy,
-                            "valence": queryData.valence,
-                            "instrumentalness": queryData.instrumentalness,
-                            "liveness": queryData.liveness
-                        }
-                    }
-                }
-            }
-        }
+    var queryJSON = { 
+        "sort": { "_score": "asc" }, "query": { "function_score": { "query": { "bool": { "must_not": { "match_phrase": { "name": queryData.name } }, "must": [{ "range": { "popularity": { "gte": queryData.popularity - inputData.popularityValue, "lte": queryData.popularity + inputData.popularityValue } } }, { "range": { "duration_ms": { "gte": 30000 } } }] } }, "script_score": { "script": { "lang": "expression", "inline": "pow(acousticness - doc['acousticness'], 2) + pow(danceability - doc['danceability'], 2) + pow(energy - doc['energy'], 2) + pow(valence - doc['valence'], 2) + pow(instrumentalness - doc['instrumentalness'], 2) + pow(liveness - doc['liveness'], 2)", "params": { "acousticness": queryData.acousticness, "danceability": queryData.danceability, "energy": queryData.energy, "valence": queryData.valence, "instrumentalness": queryData.instrumentalness, "liveness": queryData.liveness } } } } }
     }
-    var queryJSONalt = {
-    "sort": {
-        "_score": "asc"
-    },
-    "query": {
-        "term":{
-            "key": queryData.key}
-            }
+    var queryJSONalt = { "sort": { "_score": "asc"}, "query": { "term":{ "key": queryData.key}  }
     }
     // setting up the POST request for the search query
     var postOptions = {
@@ -287,51 +237,7 @@ app.get('/recommended', function(req, res) {
         if (!error && response.body) {
             console.log(body.hits.hits[0]._source);
             var queryData = body.hits.hits[0]._source;
-            var queryJSON = {
-                "sort": {
-                    "_score": "asc"
-                },
-                "query": {
-                    "function_score": {
-                        "query": {
-                            "bool": {
-                                "must_not": {
-                                    "match_phrase": {
-                                        "name": queryData.name
-                                    }
-                                },
-                                "must": [{
-                                    "range": {
-                                        "popularity": {
-                                            "gte": queryData.popularity - inputData.popularityValue,
-                                            "lte": queryData.popularity + inputData.popularityValue
-                                        }
-                                    }
-                                }, {
-                                    "range": {
-                                        "duration_ms": {
-                                            "gte": 30000
-                                        }
-                                    }
-                                }]
-                            }
-                        },
-                        "script_score": {
-                            "script": {
-                                "lang": "expression",
-                                "inline": "pow(acousticness - doc['acousticness'], 2) + pow(danceability - doc['danceability'], 2) + pow(energy - doc['energy'], 2) + pow(valence - doc['valence'], 2) + pow(instrumentalness - doc['instrumentalness'], 2) + pow(liveness - doc['liveness'], 2)",
-                                "params": {
-                                    "acousticness": queryData.acousticness,
-                                    "danceability": queryData.danceability,
-                                    "energy": queryData.energy,
-                                    "valence": queryData.valence,
-                                    "instrumentalness": queryData.instrumentalness,
-                                    "liveness": queryData.liveness
-                                }
-                            }
-                        }
-                    }
-                }
+            var queryJSON = {  "sort": { "_score": "asc" }, "query": { "function_score": { "query": { "bool": { "must_not": { "match_phrase": { "name": queryData.name } }, "must": [{ "range": { "popularity": { "gte": queryData.popularity - inputData.popularityValue, "lte": queryData.popularity + inputData.popularityValue } } }, { "range": { "duration_ms": { "gte": 30000 } } }] } }, "script_score": { "script": { "lang": "expression", "inline": "pow(acousticness - doc['acousticness'], 2) + pow(danceability - doc['danceability'], 2) + pow(energy - doc['energy'], 2) + pow(valence - doc['valence'], 2) + pow(instrumentalness - doc['instrumentalness'], 2) + pow(liveness - doc['liveness'], 2)", "params": { "acousticness": queryData.acousticness, "danceability": queryData.danceability, "energy": queryData.energy, "valence": queryData.valence, "instrumentalness": queryData.instrumentalness, "liveness": queryData.liveness } } } } }
             }
             var postOptions = {
                 url: 'https://search-spotify-dev-fvkzg4s56ax24sosxjlfxn3vk4.us-west-2.es.amazonaws.com/spotify-dev/_search',
@@ -359,7 +265,7 @@ app.get('/search', function(req, res) {
             if (!error && response.statusCode === 200) {
                 var token = body.access_token;
                 var searchOptions = {
-                    url: "https://api.spotify.com/v1/search?q=" + searchQuery + "&type=track&limit=10",
+                    url: 'https://api.spotify.com/v1/search?q="' + searchQuery + '"&type=track&limit=10',
                     headers: {
                         'Accept': 'application/json',
                         'Content-Type': 'application/json',

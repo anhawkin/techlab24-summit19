@@ -196,8 +196,8 @@ input[type="checkbox"]:checked + label span {
     height: 40%;
 }
 .getRecommendations, .sendTrack {
-    background: black;
-    width: 30%;
+    background: #212121;
+    width: 28%;
 }
 .previousPlaylist,.nextPlaylist {
     width: 50%;

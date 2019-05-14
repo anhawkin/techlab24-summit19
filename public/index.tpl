@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/extra.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <script src="//code.jquery.com/jquery-1.10.1.min.js"></script>
 
 </head>
@@ -20,7 +20,7 @@
                 <div class="col-md-6">
                     <div id="custom-search-input">
                         <div class="input-group col-md-12">
-                            <input type="text" class="form-control input-lg spotSearch" placeholder="Search for an artist or track" />
+                            <input type="text" class="form-control input-lg spotSearch" placeholder="Search for an artist or song" />
                             <span class="input-group-btn">
                         <button class="btn btn-info btn-lg spotSearch" type="button">
                             <i class="glyphicon glyphicon-search"></i>
