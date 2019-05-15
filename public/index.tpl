@@ -84,8 +84,7 @@
                 {{/each}}
 
             </ul>
-            <button class="sendTracks button">Send all</button>
-
+          
         </div>
     </script>
 
@@ -121,19 +120,7 @@
         </li>
     </script>
 
-    <script id="recommendationsSourceControls-template" type="text/x-handlebars-template">
-        <div class="shot height container">
-            <div class="shot settings">Similar Popularity<span class="left">Crucial</span><span class="right">Trivial</span><input id="popularity" type="range" min="0" max="50" step="1" value="{{popularityValue}}">
-            </div>
-            <div class="shot settings">Same Musical Modality? {{#if modeChecked}}
-                <input type="checkbox" id="mode" value="{{mode}}" checked><label for="mode">
-    <span></span>Yes</label> {{else}}
-                <input type="checkbox" id="mode" value="{{mode}}"><label for="mode">
-    <span></span>Yes</label> {{/if}}
-            </div>
-        </div>
-    </script>
-
+  
     <script src="/handlebars.min.js"></script>
     <script src="/main.js"></script>
 
