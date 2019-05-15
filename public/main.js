@@ -9,8 +9,6 @@
             var recommendationsSource = document.getElementById('recommendationsSource-template').innerHTML,
                 recommendationsTemplate = Handlebars.compile(recommendationsSource);
 
-            var recommendationsSourceControls = document.getElementById('recommendationsSourceControls-template').innerHTML,
-                recommendationsSourceControlsTemplate = Handlebars.compile(recommendationsSourceControls);
                 
 
 
